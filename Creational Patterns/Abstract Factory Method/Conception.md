@@ -1,200 +1,194 @@
-## Factory Pattern
-📝 Abstract Factory Pattern Explanation
-The Abstract Factory Pattern is a creational design pattern that provides an interface for creating a group of related or dependent objects without specifying their concrete classes. By using an abstract factory, you separate the creation of objects from their usage, making it easier to extend and modify the code.
-### 🎯 Key Concepts
-Client code interacts only with the abstract factory interface.
-Concrete factories dynamically create instances based on input.
-Decoupling the creation logic from the client code allows for flexibility and scalability.
+### **Abstract Factory Pattern**
 
-### 🍕 Factory Pattern Example: Pizza Store
-Let's go step-by-step to explain **how the Factory Pattern is implemented using the Pizza example** with specific details.
+The **Abstract Factory Pattern** is a **creational design pattern** that provides an interface to create a family of related or dependent objects without specifying their concrete classes. It allows the client to use factories that produce different types of related objects.
+
+This pattern is particularly useful when you need to ensure that the objects created together are compatible.
 
 ---
 
-## 🚀 **Objective**
+### **Key Components of Abstract Factory**
+1. **Abstract Factory:**  
+   Defines an interface for creating a family of related products. Concrete factories implement this interface.
 
-The goal is to **dynamically create different types of pizzas** (e.g., Cheese Pizza, Greek Pizza) while **decoupling the creation process from the client logic**. We'll follow the Factory Pattern to achieve this separation of concerns.
+2. **Concrete Factory:**  
+   Implements the abstract factory interface to create specific types of related products.
+
+3. **Abstract Product:**  
+   Defines an interface for a type of product. Different products in the same family will implement this interface.
+
+4. **Concrete Product:**  
+   Implements the abstract product interface and represents a specific product.
+
+5. **Client:**  
+   Uses the abstract factory and works with the abstract products. The client does not know the concrete classes of the products it works with.
 
 ---
 
-## 📝 **Step-by-Step Explanation**
+### **Benefits**
+- Ensures that a family of related products is used together.
+- Promotes consistency among products in the same family.
+- Decouples client code from concrete classes.
 
 ---
 
-### Step 1: Define the Abstract Product (Abstract Class)
+### **When to Use**
+- When your system needs to create families of related products.
+- When you want to ensure compatibility between objects of the same family.
 
-**Purpose**: Define the base class `Pizza` that all specific pizzas will extend. This abstracts the common behavior for all pizzas.
+### **Step-by-Step Explanation**
 
-### File: `Pizza.java`
+#### 1. **Abstract Product Interfaces**
+- `Drink` and `Snack` are abstract products.  
+  These interfaces define the common behavior (method `prepare()`) for any type of drink or snack.
 
 ```java
-// Abstract Pizza class
-public abstract class Pizza {
-    public abstract void prepare();   // Prepare the pizza
-    public abstract void bake();      // Bake the pizza
-    public abstract void cut();       // Cut the pizza
+interface Drink {
+    void prepare();
+}
+
+interface Snack {
+    void prepare();
 }
 ```
 
-### ✅ **Explanation**:
-- We define an **abstract class** `Pizza` with three methods: `prepare()`, `bake()`, and `cut()`.
-- This class acts as a **template** for all concrete pizzas (e.g., `CheesePizza` and `GreekPizza`).
-- Each specific pizza type will **inherit this abstract class** and provide concrete implementations for these methods.
-
----
-
-### Step 2: Create Concrete Products (Concrete Pizza Classes)
-
-**Purpose**: Implement specific pizza types that extend the `Pizza` abstract class.
-
----
-
-#### File: `CheesePizza.java`
+#### 2. **Concrete Products**
+- `Tea`, `Coffee`, `Cookie`, and `Cake` are concrete implementations of the abstract products.
+- These represent specific types of drinks and snacks. Each class overrides the `prepare()` method to specify how the product is made.
 
 ```java
-// Cheese Pizza
-public class CheesePizza extends Pizza {
+class Tea implements Drink {
     @Override
     public void prepare() {
-        System.out.println("Preparing Cheese Pizza...");
-    }
-    @Override
-    public void bake() {
-        System.out.println("Baking Cheese Pizza...");
-    }
-    @Override
-    public void cut() {
-        System.out.println("Cutting Cheese Pizza...");
+        System.out.println("Preparing Tea");
     }
 }
-```
 
-#### File: `GreekPizza.java`
-
-```java
-// Greek Pizza
-public class GreekPizza extends Pizza {
+class Coffee implements Drink {
     @Override
     public void prepare() {
-        System.out.println("Preparing Greek Pizza...");
+        System.out.println("Preparing Coffee");
     }
+}
+
+class Cookie implements Snack {
     @Override
-    public void bake() {
-        System.out.println("Baking Greek Pizza...");
+    public void prepare() {
+        System.out.println("Preparing Cookie");
     }
+}
+
+class Cake implements Snack {
     @Override
-    public void cut() {
-        System.out.println("Cutting Greek Pizza...");
+    public void prepare() {
+        System.out.println("Preparing Cake");
     }
 }
 ```
 
-### ✅ **Explanation**:
-- `CheesePizza` and `GreekPizza` **extend the `Pizza` abstract class**.
-- Each class overrides the methods `prepare()`, `bake()`, and `cut()` to provide its own specific behavior.
-- For example:
-    - `CheesePizza` will print `"Preparing Cheese Pizza..."`.
-    - `GreekPizza` will print `"Preparing Greek Pizza..."`.
-
 ---
 
-### Step 3: Create the Factory Class (PizzaFactory)
-
-**Purpose**: Create pizzas dynamically without exposing the creation logic to the client.
-
----
-
-#### File: `PizzaFactory.java`
+#### 3. **Abstract Factory**
+- `DrinkAndSnackFactory` is the abstract factory interface.
+- It declares methods for creating a drink (`createDrink()`) and a snack (`createSnack()`). Concrete factories will implement this interface.
 
 ```java
-// Factory class to create pizzas
-public class PizzaFactory {
-    public static Pizza createPizza(String type) {
-        if (type.equalsIgnoreCase("cheese")) {
-            return new CheesePizza();
-        } else if (type.equalsIgnoreCase("greek")) {
-            return new GreekPizza();
-        } else {
-            throw new IllegalArgumentException("Unknown pizza type: " + type);
-        }
+interface DrinkAndSnackFactory {
+    Drink createDrink();
+    Snack createSnack();
+}
+```
+
+---
+
+#### 4. **Concrete Factories**
+- `TeaAndCookieFactory` creates a combo of tea and cookies.
+- `CoffeeAndCakeFactory` creates a combo of coffee and cake.
+
+Each concrete factory defines specific logic for creating its respective products.
+
+```java
+class TeaAndCookieFactory implements DrinkAndSnackFactory {
+    @Override
+    public Drink createDrink() {
+        return new Tea();
+    }
+
+    @Override
+    public Snack createSnack() {
+        return new Cookie();
+    }
+}
+
+class CoffeeAndCakeFactory implements DrinkAndSnackFactory {
+    @Override
+    public Drink createDrink() {
+        return new Coffee();
+    }
+
+    @Override
+    public Snack createSnack() {
+        return new Cake();
     }
 }
 ```
 
-### ✅ **Explanation**:
-- The `PizzaFactory` has a **static method `createPizza`**.
-- It takes a `String` argument `type` and returns the corresponding pizza type (`CheesePizza` or `GreekPizza`).
-- If an unknown type is passed, it throws an `IllegalArgumentException`.
-- This method **hides the complexity of object creation** from the client code.
-
 ---
 
-### Step 4: Client Code (PizzaStore)
-
-**Purpose**: Use the factory to create pizzas without knowing their specific types.
-
----
-
-#### File: `PizzaStore.java`
+#### 5. **Client**
+- The client (the `main` method) uses the abstract factory interface `DrinkAndSnackFactory` to create products without worrying about their specific classes.
+- In this example:
+    - We use `TeaAndCookieFactory` to create a tea and a cookie.
+    - The client interacts only with the abstract interfaces (`Drink` and `Snack`) and does not depend on specific classes like `Tea` or `Cookie`.
 
 ```java
-// Client code to demonstrate the Factory Pattern
-public class PizzaStore {
+public class Main {
     public static void main(String[] args) {
-        // Use the factory to create a Cheese Pizza
-        Pizza cheesePizza = PizzaFactory.createPizza("cheese");
-        cheesePizza.prepare();
-        cheesePizza.bake();
-        cheesePizza.cut();
+        DrinkAndSnackFactory factory = new TeaAndCookieFactory(); // Choose "Tea + Cookie" combo
 
-        // Use the factory to create a Greek Pizza
-        Pizza greekPizza = PizzaFactory.createPizza("greek");
-        greekPizza.prepare();
-        greekPizza.bake();
-        greekPizza.cut();
+        Drink drink = factory.createDrink(); // Create tea
+        Snack snack = factory.createSnack(); // Create cookie
+
+        drink.prepare(); // Output: Preparing Tea
+        snack.prepare(); // Output: Preparing Cookie
     }
 }
 ```
 
-### ✅ **Explanation**:
-1. **Client calls the Factory**:
-    - In `PizzaStore`, we use `PizzaFactory.createPizza("cheese")` to get a `CheesePizza` object.
-    - Similarly, we use `PizzaFactory.createPizza("greek")` to get a `GreekPizza` object.
+---
 
-2. **Perform operations on pizzas**:
-    - The client calls the methods `prepare()`, `bake()`, and `cut()` on the `Pizza` object.
-    - The actual behavior depends on the type of pizza returned by the factory:
-        - For **`cheesePizza`**, it outputs:
-            - **"Preparing Cheese Pizza..."**
-            - **"Baking Cheese Pizza..."**
-            - **"Cutting Cheese Pizza..."**
-        - For **`greekPizza`**, it outputs:
-            - **"Preparing Greek Pizza..."**
-            - **"Baking Greek Pizza..."**
-            - **"Cutting Greek Pizza..."**
+### **Key Concepts Demonstrated**
+
+1. **Decoupling Creation from Usage**
+    - The client (`Main`) does not need to know about `Tea`, `Cookie`, or other concrete classes.
+    - It interacts only with the abstract factory (`DrinkAndSnackFactory`) and the abstract products (`Drink` and `Snack`).
+
+2. **Family of Products**
+    - Each factory (`TeaAndCookieFactory`, `CoffeeAndCakeFactory`) produces products that belong to the same family (e.g., tea goes well with cookies, coffee goes well with cake).
+
+3. **Scalability**
+    - If new combos are added (e.g., "Juice + Muffin"), you can simply create a new concrete factory without changing existing code.
 
 ---
 
-## ✅ **Benefits of the Factory Pattern**
-
-1. **Decoupling**:
-    - The client code (`PizzaStore.java`) **does not care about the specific implementation of pizzas**.
-    - Adding a new pizza type (e.g., `VeggiePizza`) requires only a new class and a change to `PizzaFactory`.
-
-2. **Flexibility**:
-    - New pizza types can be added without modifying client code.
-    - Simply extend the `Pizza` abstract class and update the `PizzaFactory`.
-
-3. **Maintainability**:
-    - Centralized creation logic in `PizzaFactory` simplifies changes and testing.
+### **Output of the Example**
+When you run the code:
+```
+Preparing Tea
+Preparing Cookie
+```
 
 ---
 
-### 📝 **Summary**
+### **Customization**
+If you switch the factory to `CoffeeAndCakeFactory`:
+```java
+DrinkAndSnackFactory factory = new CoffeeAndCakeFactory(); // Choose "Coffee + Cake" combo
+```
 
-- **Abstract Product (`Pizza`)**: Defines the shared interface for pizzas.
-- **Concrete Products (`CheesePizza`, `GreekPizza`)**: Implement specific pizzas inheriting from the base class.
-- **Factory (`PizzaFactory`)**: Handles dynamic creation of pizza objects.
-- **Client (`PizzaStore`)**: Uses the factory method to interact with pizzas without knowing their concrete classes.
+The output will be:
+```
+Preparing Coffee
+Preparing Cake
+``` 
 
-By following the Factory Pattern, we've successfully **separated creation logic from usage**, making the code more **scalable, maintainable, and flexible**. 🍕
+This illustrates how you can dynamically choose product families at runtime.
