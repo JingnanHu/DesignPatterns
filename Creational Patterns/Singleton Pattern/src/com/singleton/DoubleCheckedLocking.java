@@ -4,7 +4,7 @@ public class DoubleCheckedLocking {
     private DoubleCheckedLocking() {};
     private static DoubleCheckedLocking instance;
 
-    public static synchronized DoubleCheckedLocking getInstance() {
+    public static i DoubleCheckedLocking getInstance() {
         if (instance == null) {
             synchronized (DoubleCheckedLocking.class) {
                 //作用：为当前类加锁。

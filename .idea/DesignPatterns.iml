@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Structural Patterns/Bridge Patterns/Example/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Structural Patterns/Composite Pattern/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Structural Patterns/Decoration Pattern/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Structural Patterns/Facade Pattern/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
