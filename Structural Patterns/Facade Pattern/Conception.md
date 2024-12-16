@@ -66,3 +66,4 @@ The facade pattern introduces a single class, called the **facade**, to act as a
 1. When working with a **complex subsystem** that needs to be simplified for clients.
 2. When you need to **decouple** the client from the subsystem.
 3. When the system evolves, and you want to **minimize the impact** on client code.
+https://blog.csdn.net/ywlmsm1224811/article/details/96135384
