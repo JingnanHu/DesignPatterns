@@ -13,6 +13,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Structural Patterns/Facade Pattern/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Structural Patterns/Flyweight Pattern/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Structural Patterns/Proxy Pattern/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Behavioral Patterns      /Chain of Resonsibility/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Behavioral Patterns      /Command Pattern/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Behavioral Patterns      /Iterator Pattern/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
