@@ -22,6 +22,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Behavioral Patterns      /State Pattern/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Behavioral Patterns      /Strategy Pattern/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Behavioral Patterns      /Template Pattern/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Behavioral Patterns      /Visitor Pattern/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
