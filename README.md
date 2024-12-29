@@ -31,17 +31,17 @@ Feel free to connect with me on [LinkedIn](www.linkedin.com/in/jina-jingnan-hu-9
    - [Proxy](https://github.com/JingnanHu/DesignPatterns/blob/main/Structural%20Patterns/Proxy%20Pattern/Conception.md)
 
 3. **Behavioral Patterns**
-   - [Chain of Responsibility](./behavioral/chain-of-responsibility/README.md)
-   - [Command](./behavioral/command/README.md)
+   - [Chain of Responsibility](https://github.com/JingnanHu/DesignPatterns/blob/main/Behavioral%20Patterns%20%20%20%20%20%20/Chain%20of%20Resonsibility/Conception.md)
+   - [Command](https://github.com/JingnanHu/DesignPatterns/blob/main/Behavioral%20Patterns%20%20%20%20%20%20/Command%20Pattern/Conception.md)
    - [Interpreter](./behavioral/interpreter/README.md)
-   - [Iterator](./behavioral/iterator/README.md)
-   - [Mediator](./behavioral/mediator/README.md)
-   - [Memento](./behavioral/memento/README.md)
-   - [Observer](./behavioral/observer/README.md)
-   - [State](./behavioral/state/README.md)
-   - [Strategy](./behavioral/strategy/README.md)
-   - [Template Method](./behavioral/template-method/README.md)
-   - [Visitor](./behavioral/visitor/README.md)
+   - [Iterator](https://github.com/JingnanHu/DesignPatterns/blob/main/Behavioral%20Patterns%20%20%20%20%20%20/Iterator%20Pattern/Conception.md)
+   - [Mediator](https://github.com/JingnanHu/DesignPatterns/blob/main/Behavioral%20Patterns%20%20%20%20%20%20/Mediator%20Pattern/Conception.md)
+   - [Memento](https://github.com/JingnanHu/DesignPatterns/blob/main/Behavioral%20Patterns%20%20%20%20%20%20/Memento%20Pattern/Conception.md)
+   - [Observer](https://github.com/JingnanHu/DesignPatterns/blob/main/Behavioral%20Patterns%20%20%20%20%20%20/Observer%20Pattern/Conception.md)
+   - [State](https://github.com/JingnanHu/DesignPatterns/blob/main/Behavioral%20Patterns%20%20%20%20%20%20/State%20Pattern/Conception.md)
+   - [Strategy](https://github.com/JingnanHu/DesignPatterns/blob/main/Behavioral%20Patterns%20%20%20%20%20%20/Strategy%20Pattern/Conception.md)
+   - [Template Method](https://github.com/JingnanHu/DesignPatterns/blob/main/Behavioral%20Patterns%20%20%20%20%20%20/Template%20Pattern/Conception.md)
+   - [Visitor](https://github.com/JingnanHu/DesignPatterns/blob/main/Behavioral%20Patterns%20%20%20%20%20%20/Visitor%20Pattern/Conception.md)
 
 ---
 
@@ -52,27 +52,27 @@ Each pattern is implemented in its dedicated directory with the following struct
 ```
 design-patterns/
 │
-├── creational/
-│   ├── factory-method/
-│   │   ├── FactoryMethod.java
-│   │   └── README.md
+├── Creational Pattern/
+│   ├── Factory Method/
+│   │   ├── com.pizzaRestairang (code file)
+│   │   └── Conception.md
 │   ...
 │
-├── structural/
-│   ├── adapter/
-│   │   ├── Adapter.java
-│   │   └── README.md
+├── Structural Patterns/
+│   ├── Adapter Pattern/
+│   │   ├── com...(code file)
+│   │   └── Conception.md
 │   ...
 │
-├── behavioral/
-│   ├── observer/
-│   │   ├── Observer.java
-│   │   └── README.md
+├── Behavioral Patterns/
+│   ├── Observer Pattern/
+│   │   ├── com..(code file)
+│   │   └── Conception.md
 │   ...
 ```
 
 - **Code Files**: Contain Java implementations of each design pattern.
-- **README.md**: Explanation, UML diagrams, and use cases for the pattern.
+- **Conception.md**: Explanation and use cases for the pattern.
 
 ---
 
@@ -82,40 +82,11 @@ design-patterns/
 - Familiarity with object-oriented programming concepts
 
 ---
-
-## How to Use
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/design-patterns-java.git
-   cd design-patterns-java
-   ```
-
-2. Navigate to the desired pattern directory and review the code and documentation.
-
-3. Compile and run examples using:
-   ```bash
-   javac Example.java
-   java Example
-   ```
-
----
-
 ## Contributions
 
 Contributions, suggestions, and feedback are welcome! Feel free to create pull requests or open issues to improve this repository.
 
 ---
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
-
----
-
 ## Acknowledgments
 
 This repository is inspired by the **Gang of Four (GoF)** book, *Design Patterns: Elements of Reusable Object-Oriented Software*. Special thanks to the community for providing insightful discussions and resources.
-```
-
-Feel free to adapt the content to match your project specifics or personal style!

@@ -21,6 +21,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Behavioral Patterns      /Observer Pattern/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Behavioral Patterns      /State Pattern/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Behavioral Patterns      /Strategy Pattern/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Behavioral Patterns      /Interpreter Pattern/com.interpreterPattern/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Behavioral Patterns      /Template Pattern/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Behavioral Patterns      /Visitor Pattern/src" isTestSource="false" />
     </content>
