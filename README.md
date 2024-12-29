@@ -9,7 +9,7 @@ Hi! 👋 I'm Jingnan Hu, a passionate software developer with a strong interest 
 
 This repository is a culmination of my efforts to deeply understand and apply the 23 design patterns described in the classic *Design Patterns: Elements of Reusable Object-Oriented Software* by the Gang of Four (GoF). I hope it serves as a valuable resource for developers at all levels.
 
-Feel free to connect with me on [LinkedIn](www.linkedin.com/in/jina-jingnan-hu-9835912aa).
+Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/jina-jingnan-hu-9835912aa).
 ---
 
 ## Table of Contents
