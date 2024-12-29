@@ -33,7 +33,7 @@ Feel free to connect with me on [LinkedIn](www.linkedin.com/in/jina-jingnan-hu-9
 3. **Behavioral Patterns**
    - [Chain of Responsibility](https://github.com/JingnanHu/DesignPatterns/blob/main/Behavioral%20Patterns%20%20%20%20%20%20/Chain%20of%20Resonsibility/Conception.md)
    - [Command](https://github.com/JingnanHu/DesignPatterns/blob/main/Behavioral%20Patterns%20%20%20%20%20%20/Command%20Pattern/Conception.md)
-   - [Interpreter](./behavioral/interpreter/README.md)
+   - [Interpreter](https://github.com/JingnanHu/DesignPatterns/blob/main/Behavioral%20Patterns%20%20%20%20%20%20/Interpreter%20Pattern/Conception.md)
    - [Iterator](https://github.com/JingnanHu/DesignPatterns/blob/main/Behavioral%20Patterns%20%20%20%20%20%20/Iterator%20Pattern/Conception.md)
    - [Mediator](https://github.com/JingnanHu/DesignPatterns/blob/main/Behavioral%20Patterns%20%20%20%20%20%20/Mediator%20Pattern/Conception.md)
    - [Memento](https://github.com/JingnanHu/DesignPatterns/blob/main/Behavioral%20Patterns%20%20%20%20%20%20/Memento%20Pattern/Conception.md)
